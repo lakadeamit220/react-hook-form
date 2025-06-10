@@ -1,36 +1,41 @@
 import React, { useState, useRef } from 'react';
 
-function LoginForm() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const inputRef = useRef(null);
+function SignupFormWithValidation() {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const emailRef = useRef(null);
 
-  const handleLogin = () => {
-    if (!username || !password) {
-      inputRef.current.focus(); // Focus the username field if inputs are empty
+  const validateEmail = (value) => {
+    if (!value.includes('@')) {
+      setError('Invalid email address');
+      emailRef.current.focus(); // Focus input on error
     } else {
-      console.log('Logging in with:', { username, password });
+      setError('');
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    validateEmail(email);
+
+    if (!error) {
+      console.log('Form submitted:', { email });
     }
   };
 
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        ref={inputRef} // Using useRef for direct DOM access
+        type="email"
+        ref={emailRef}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email"
       />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLogin}>Login</button>
-    </div>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <button type="submit">Submit</button>
+    </form>
   );
 }
 
-export default LoginForm;
+export default SignupFormWithValidation;

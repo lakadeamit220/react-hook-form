@@ -1,4 +1,4 @@
-import LoginForm from "./components/basic/LoginForm";
+import SignupFormWithValidation from "./components/basic/LoginForm";
 import MyFormWithRef from "./components/basic/MyFormRef";
 import MyForm from "./components/basic/MyFormState";
 
@@ -10,7 +10,7 @@ function App() {
       </h1>
       {/* <MyForm /> */}
       {/* <MyFormWithRef/> */}
-      <LoginForm/>
+      <SignupFormWithValidation />
     </>
   );
 }
