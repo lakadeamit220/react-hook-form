@@ -2,6 +2,7 @@ import SignupFormWithValidation from "./components/basic/LoginForm";
 import MyFormWithRef from "./components/basic/MyFormRef";
 import MyForm from "./components/basic/MyFormState";
 import BasicReactHook from "./components/react-hook-form/Basic";
+import Integrate from "./components/react-hook-form/Integrate";
 import Register from "./components/react-hook-form/Register";
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       {/* <MyFormWithRef/> */}
       {/* <SignupFormWithValidation /> */}
       {/* <BasicReactHook/> */}
-      <Register/>
+      {/* <Register/> */}
+      <Integrate />
     </>
   );
 }
