@@ -1,26 +1,26 @@
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 
 function MyFormWithRef() {
-  const nameRef = useRef('');
-  const emailRef = useRef('');
-  const messageRef = useRef('');
+  const nameRef = useRef("");
+  const emailRef = useRef("");
+  const messageRef = useRef("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Access the current values
     const formData = {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
-      message: messageRef.current.value,
+      name: nameRef.current.valueOf,
+      email: emailRef.current.valueOf,
+      message: messageRef.current.valueOf,
     };
 
-    console.log('Form Data Submitted:', formData);
+    console.log("Form Data Submitted:", formData);
 
     // Reset values
-    nameRef.current.valueOf = '';
-    emailRef.current.valueOf = '';
-    messageRef.current.valueOf = '';
+    nameRef.current.valueOf = "";
+    emailRef.current.valueOf = "";
+    messageRef.current.valueOf = "";
   };
 
   return (
