@@ -1,6 +1,7 @@
 import SignupFormWithValidation from "./components/basic/LoginForm";
 import MyFormWithRef from "./components/basic/MyFormRef";
 import MyForm from "./components/basic/MyFormState";
+import BasicReactHook from "./components/react-hook-form/Basic";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       </h1>
       {/* <MyForm /> */}
       {/* <MyFormWithRef/> */}
-      <SignupFormWithValidation />
+      {/* <SignupFormWithValidation /> */}
+      <BasicReactHook/>
     </>
   );
 }
