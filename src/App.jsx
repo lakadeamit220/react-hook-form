@@ -1,3 +1,4 @@
+import MyFormWithRef from "./components/basic/MyFormRef";
 import MyForm from "./components/basic/MyFormState";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
         React-Hook-Form
       </h1>
       <MyForm />
+      <MyFormWithRef/>
     </>
   );
 }
